@@ -1,0 +1,1023 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../Functions/">
+      
+      
+        <link rel="next" href="../Install/">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.5">
+    
+    
+      
+        <title>GLSL Language - Pixel-Wrangle Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.558e4712.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.2505c338.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira:300,300i,400,400i,700,700i%7CFira+Code:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Fira";--md-code-font:"Fira Code"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#glsl-language" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Pixel-Wrangle Docs" class="md-header__button md-logo" aria-label="Pixel-Wrangle Docs" data-md-component="logo">
+      
+  <img src="../../assets/logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Pixel-Wrangle Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              GLSL Language
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_3" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9h-1.9M20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69m-9.15 3.96h2.3L12 9l-1.15 3.65Z"/></svg>
+            </label>
+          
+        
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+            </label>
+          
+        
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_3">
+          
+            <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+      <div class="md-header__option">
+        <div class="md-select">
+          
+          <button class="md-header__button md-icon" aria-label="Select language">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.52 17.52 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04M18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12m-2.62 7 1.62-4.33L19.12 17h-3.24Z"/></svg>
+          </button>
+          <div class="md-select__inner">
+            <ul class="md-select__list">
+              
+                <li class="md-select__item">
+                  <a href="/en/" hreflang="en" class="md-select__link">
+                    English
+                  </a>
+                </li>
+              
+                <li class="md-select__item">
+                  <a href="/fr/" hreflang="fr" class="md-select__link">
+                    Français
+                  </a>
+                </li>
+              
+            </ul>
+          </div>
+        </div>
+      </div>
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Pixel-Wrangle Docs" class="md-nav__button md-logo" aria-label="Pixel-Wrangle Docs" data-md-component="logo">
+      
+  <img src="../../assets/logo.svg" alt="logo">
+
+    </a>
+    Pixel-Wrangle Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Pixel Wrangle Documentation
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Changelog/" class="md-nav__link">
+        Changelog
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3" tabindex="0" aria-expanded="true">
+          En
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="En" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          En
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Coding%20with%20Pixel%20Wrangle/" class="md-nav__link">
+        Coding with Pixel-Wrangle
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Contribute/" class="md-nav__link">
+        Contribute
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Functions/" class="md-nav__link">
+        Functions
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          GLSL Language
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        GLSL Language
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#generalities" class="md-nav__link">
+    Generalities
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#useful-links" class="md-nav__link">
+    Useful Links
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rendering-pipeline" class="md-nav__link">
+    Rendering Pipeline
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pixel-shader" class="md-nav__link">
+    Pixel Shader
+  </a>
+  
+    <nav class="md-nav" aria-label="Pixel Shader">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gpu-vs-cpu-by-example" class="md-nav__link">
+    GPU vs CPU by example
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pixel-coordinates" class="md-nav__link">
+    Pixel Coordinates
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Install/" class="md-nav__link">
+        Install
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Keyboard%20Shortcuts/" class="md-nav__link">
+        Keyboard Shortcuts
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Macros/" class="md-nav__link">
+        Macros
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Parameters/" class="md-nav__link">
+        Parameters
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Presets/" class="md-nav__link">
+        Presets
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Quick%20Start/" class="md-nav__link">
+        Quick Start
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Visual%20Studio%20Code/" class="md-nav__link">
+        Visual Studio Code
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4" tabindex="0" aria-expanded="false">
+          Fr
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Fr" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Fr
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../fr/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../fr/Coder%20avec%20Pixel%20Wrangle/" class="md-nav__link">
+        Coder avec Pixel-Wrangle
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../fr/Contribuer/" class="md-nav__link">
+        Contribuer au projet
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../fr/D%C3%A9marrer%20rapidement%20avec%20Pixel%20Wrangle/" class="md-nav__link">
+        Démarrer rapidement
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../fr/Fonctions/" class="md-nav__link">
+        Fonctions
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../fr/GLSL/" class="md-nav__link">
+        Le langage GLSL
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../fr/Installation/" class="md-nav__link">
+        Installation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../fr/Macros/" class="md-nav__link">
+        Les Macros
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../fr/Param%C3%A8tres/" class="md-nav__link">
+        Paramètres
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../fr/Presets/" class="md-nav__link">
+        Presets
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../fr/Raccourcis%20claviers/" class="md-nav__link">
+        Les raccourcis clavier
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../fr/VSCode/" class="md-nav__link">
+        Visual Studio Code
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#generalities" class="md-nav__link">
+    Generalities
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#useful-links" class="md-nav__link">
+    Useful Links
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rendering-pipeline" class="md-nav__link">
+    Rendering Pipeline
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pixel-shader" class="md-nav__link">
+    Pixel Shader
+  </a>
+  
+    <nav class="md-nav" aria-label="Pixel Shader">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gpu-vs-cpu-by-example" class="md-nav__link">
+    GPU vs CPU by example
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pixel-coordinates" class="md-nav__link">
+    Pixel Coordinates
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="glsl-language">GLSL Language</h1>
+<h2 id="generalities">Generalities</h2>
+<p>GLSL is a compiled C-type language designed to create shaders. It was created and is maintained by the non-profit consortium Khronos Group, which is behind the open-source OpenGL standard (and now Vulkan, which will eventually replace OpenGL).</p>
+<p>A shader is a small computer program limited to a specific task. It is generally used to display things on the screen. GLSL shaders are run on your graphics processor (GPU).</p>
+<p>GLSL is able to intervene at several levels of the image rendering process. All the steps necessary to provide the final result are called the <a href="./#rendering-pipeline">GLSL Language#Rendering Pipeline</a>. Therefore, GLSL integrates into graphics applications using the OpenGL, Vulkan, WebGL APIs, and more.</p>
+<p>As of the 2022 builds, Touchdesigner integrates GLSL through Vulkan, the latest graphics API from Khronos, which will eventually replace OpenGL.</p>
+<p>The software provides an implementation of GLSL through two of its native operators: <a href="https://docs.derivative.ca/GLSL_TOP">GLSL TOP</a> (Texture) and <a href="https://docs.derivative.ca/GLSL_MAT">GLSL MAT</a> (Materials).</p>
+<p>It is important to note that GLSL shaders run in parallel on your machine, taking advantage of the power of graphics processors (GPUs) and offering very good performance for real-time applications.</p>
+<p>However, some programming basics are necessary to fully exploit the potential of shaders or adapt them to your own needs. In addition, programming a GPU (parallel calculation) requires a particular code structure and some constraints that may take some time to be understood.</p>
+<p>I highly recommend reading the excellent <a href="https://thebookofshaders.com">https://thebookofshaders.com</a>, which helps to better understand these concepts, especially since much of the content is translated into many languages.</p>
+<p>Finally, GLSL is directly derived from the C language, so the syntax and semantics are very similar.</p>
+<p>However, there are some notable differences compared to C, including:</p>
+<ul>
+<li>A shortened syntax for manipulating vectors (called vector swizzling)</li>
+<li>A native library containing common mathematical functions as well as other functions specific to shaders</li>
+<li>Special types (matrices, samplers, etc.) dedicated to shader manipulation</li>
+<li>And many other things that I invite you to discover for yourself through the <a href="https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.60.pdf">official documentation</a>.</li>
+</ul>
+<p>You will also discover that some features of C are absent.</p>
+<p>For example, certain types such as strings do not exist in GLSL. This is partly due to the constraints imposed by the architecture of current GPUs and the way they perform calculations.</p>
+<p>Finally, you will find a list of useful links below for your journey.</p>
+<h2 id="useful-links">Useful Links</h2>
+<blockquote>
+<p>[!INFO]</p>
+<ul>
+<li>
+<p>An <a href="https://thebookofshaders.com">essential resource for getting started if you have never worked with shaders (The Book of Shaders)</a>.</p>
+</li>
+<li>
+<p>An <a href="https://www.youtube.com/watch?v=uOErsQljpHs">overview of the language specifications in video.</a></p>
+</li>
+<li>
+<p>The <a href="https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.60.pdf">official documentation of the language</a> available on the Khronos website as a downloadable PDF.</p>
+</li>
+<li>
+<p>An index of <a href="https://docs.gl/sl4/sin">functions included in the GLSL standard library</a>.</p>
+</li>
+<li>
+<p>More details on the <a href="https://docs.derivative.ca/Write_a_GLSL_TOP">implementation of GLSL TOP</a> (the underlying operator of Pixel Wrangle) in Touchdesigner.</p>
+</li>
+<li>
+<p><a href="https://shadertoy.com">Shadertoy</a>, a website that allows for the creation of shaders online using WebGL. It is a great place to find many examples of shaders created by the community.</p>
+</li>
+<li>
+<p><a href="https://iquilezles.org/articles/">The website of Inigo Quiles</a> is also a massive learning resource for understanding various mechanisms related to shader creation and the underlying math.</p>
+</li>
+<li>
+<p><a href="https://lygia.xyz">Lygia</a> is a community project led by Patricio Gonzalez Vivo (The Book of Shaders) among others, and is a library of GLSL (and HLSL) functions that provides a large number of very useful functions. It is natively provided with Pixel Wrangle and greatly facilitates work.</p>
+</li>
+<li>
+<p>Many YouTube videos cover shader creation. Some in the context of Touchdesigner, Unity, Shadron, glslsandbox, or other frameworks. The YouTube channel The Art Of Code, for example, offers a good introduction to GLSL on Shadertoy through practice.</p>
+</li>
+</ul>
+</blockquote>
+<h2 id="rendering-pipeline">Rendering Pipeline</h2>
+<p>GLSL is a language that can be used at different stages of the rendering pipeline.</p>
+<p>Each stage of the pipeline has its own variables and functions.</p>
+<p>Here is a list (non-exhaustive and probably inaccurate in some places) of the stages of the pipeline, in chronological order:</p>
+<ul>
+<li>
+<p>Vertex Specification: This is the initial stage, which involves retrieving the list of points and primitives and their attributes (ID, position, etc.) from CPU memory and converting them into a format that can be used in the subsequent stages of the rendering pipeline in GPU memory. This step is automatically performed by Touchdesigner and the OpenGL/Vulkan backend when using a <a href="https://docs.derivative.ca/GLSL_MAT">GLSL TOP</a> on a <a href="https://docs.derivative.ca/Geometry_COMP">Geometry COMP</a>.</p>
+</li>
+<li>
+<p>Vertex Shader: This is a program that operates at the level of the geometry of a 3D object, and is executed simultaneously on each vertex of the input geometry. It allows, in particular, to create and modify attributes such as the position of points to deform an object, for example. The result of these operations is then passed on to the next stage of the rendering pipeline. Some intermediate steps can be performed at this stage (see Geometry Shaders, Tessellation Shaders...).</p>
+</li>
+<li>
+<p>Rasterization: Rasterization is an operation that transforms a scene described in a 3D space into a 2D image that can be displayed on a screen at a chosen resolution (discretization). You can imagine this step as the projection of our screen space (the view) onto the 3D objects in the scene. This operation is automatically and transparently performed by the OpenGL/Vulkan backend. There is no associated shader that allows for control over this stage of the pipeline, but it is crucial in the rendering pipeline.</p>
+</li>
+<li>
+<p>Pixel Shader (or Fragment Shader): This is a program that runs on each pixel rendered on the screen. A pixel shader allows you to manipulate this data to produce the final color of the pixels.</p>
+</li>
+</ul>
+<p>-&gt; In the case of a 3D object from a vertex shader, the Pixel shader performs an interpolation of the attribute values provided by the vertex shader. You can then manipulate them as you wish to obtain the desired result</p>
+<p>-&gt; In the case where no Vertex Shader is provided. Touchdesigner's Pixel shader implementation (GLSL TOP) provides 2 rectangle triangles by default that form a rectangle with the exact dimensions of the screen. You therefore have a coordinate system from which you can have fun. Note that it is quite possible to create 3D images without using a vertex shader or a geometry composed of points. This means that all the logic must be coded in the pixel shader. Raymarching (or 'Sphere Tracing') is one of these techniques. It is based on the description of shapes by distance fields called SDFs. You can find a lot of examples on <a href="https://shadertoy.com">Shadertoy</a> and <a href="https://iquilezles.org/articles/">Inigo Quiles's website</a> if you want to learn more about these techniques. As for raymarching in Touchdesigner, the rayTK project led by tekt is a wonderful example of porting this technique to the Touchdesigner environment. It greatly simplifies its use through a pre-constructed operator ecosystem. A tip, go see it!</p>
+<p>In Touchdesigner, GLSL can be used through <a href="https://docs.derivative.ca/GLSL_TOP">GLSL TOP</a> (Image generation in the TOP context) or <a href="https://docs.derivative.ca/GLSL_MAT">GLSL MAT</a> (Material generation for 3D objects).</p>
+<p>NB: The work environment provided by Pixel Wrangle currently only works with <a href="https://docs.derivative.ca/GLSL_TOP">GLSL TOP</a>.</p>
+<h2 id="pixel-shader">Pixel Shader</h2>
+<p>In the case of a pixel shader without a manually associated vertex shader (the default behavior of Pixel Wrangle), the thing you are actually manipulating within the main() function of your shader is the current pixel.</p>
+<p>This pixel has an intrinsic and fundamental characteristic, its position in screen space.
+In the case of a 2D image, for example, this is the x and y coordinates.</p>
+<p>It is important to understand that this same program is executed simultaneously on each of the pixels that make up your final image.</p>
+<p>For an image of 1024 <em>1024 pixels, for example, this program will be executed 1024</em> 1024 times, a total of 1,048,576 times. That's a lot.</p>
+<p>In the case of a standard processor (CPU), all these executions would be carried out sequentially (or at best, distributed across the few cores of your CPU).</p>
+<p>A CPU is very efficient for most everyday tasks with a computer and has fast and significant memory storage (RAM), but it is not very efficient when you need to perform the same processing on a large number of elements at the same time, as is the case with an image made up of pixels.</p>
+<p>On the contrary, a shader runs on your graphics processor (GPU). GPUs have a different architecture than CPUs, which is designed to execute a large number of tasks at the same time.
+For comparison, a GPU has a few thousand cores to more than 10,000 for high-end GPUs.
+This greatly reduces the number of operations performed at the same time, as the calculations are distributed among the thousands of cores of your GPU.</p>
+<p>The main limitations of the GPU:</p>
+<ul>
+<li>Limited memory space (VRAM is expensive and of fixed size), which implies a certain size and complexity limit for operations, more easily reached than with a CPU.</li>
+<li>A lower sequential execution speed (per GPU core) than your CPU.</li>
+<li>Current GPUs perform calculations with numbers only, making them difficult to use for tasks that manipulate strings of characters or certain types of complex data that are common in traditional programming.</li>
+<li>Abstraction capabilities are reduced, the scope of operations is limited.</li>
+</ul>
+<h3 id="gpu-vs-cpu-by-example">GPU vs CPU by example</h3>
+<p><strong>CPU</strong> :</p>
+<ul>
+<li>Write 2 nested for loops, each iterating over the x and y coordinates of the image.</li>
+<li>Execute your main() function with all your code inside the 2 loops, on each of the pixels composing your image.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kt">int</span><span class="w"> </span><span class="n">ResolutionX</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1024</span><span class="p">;</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="kt">int</span><span class="w"> </span><span class="n">ResolutionY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1024</span><span class="p">;</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="o">=</span><span class="mo">0</span><span class="p">;</span><span class="w"> </span><span class="n">x</span><span class="o">&lt;</span><span class="n">ResolutionX</span><span class="p">;</span><span class="w"> </span><span class="n">x</span><span class="o">++</span><span class="p">){</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w"> </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">y</span><span class="o">=</span><span class="mo">0</span><span class="p">;</span><span class="w"> </span><span class="n">y</span><span class="o">&lt;</span><span class="n">ResolutionY</span><span class="p">;</span><span class="w"> </span><span class="n">y</span><span class="o">++</span><span class="p">){</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">  </span><span class="cm">/* Intrinsic Attributes */</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">  </span><span class="kt">uvec2</span><span class="w"> </span><span class="n">absolutePositionOfCurrentPixel</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="kt">uvec2</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">);</span><span class="w">                                                           </span><span class="c1">// -&gt; Absolute Coordinates   (with x and y integer values between 0 and Resolution-1)</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">   </span><span class="kt">vec2</span><span class="w"> </span><span class="n">normalizedPositionOfCurrentPixel</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="kt">vec2</span><span class="p">(</span><span class="kt">float</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="kt">float</span><span class="p">(</span><span class="n">ResolutionX</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span><span class="kt">float</span><span class="p">(</span><span class="n">y</span><span class="p">)</span><span class="o">/</span><span class="kt">float</span><span class="p">(</span><span class="n">ResolutionY</span><span class="o">-</span><span class="mi">1</span><span class="p">));</span><span class="w">   </span><span class="c1">// -&gt; Normalized Coordinates (with x and y float values between 0 and 1) =&gt; vUV.st</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">  </span><span class="cm">/* Your main() function in a 2D Pixel Shader is executed here */</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">  </span><span class="c1">// Your awesome stuff...</span>
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="w">  </span><span class="c1">// ...</span>
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="w"> </span><span class="p">}</span>
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="p">}</span>
+</code></pre></div>
+<p><strong>Pixel Shader (GPU) :</strong></p>
+<ul>
+<li>The coordinates are already provided by the main context through a variable called vUV in Touchdesigner.</li>
+<li>Just write your code in the main() function and retrieve the coordinates directly from the shader (vUV).
+This would have the following form for an image of 1024 * 1024 pixels: Within the main() function of a pixel shader, you can consider that each of your instructions is executed simultaneously, and the execution context is the internal part of this double 'for' loop.</li>
+</ul>
+<p>GLSL and Vulkan intelligently distribute the simultaneous execution of the program on all available cores of your GPU.</p>
+<h3 id="pixel-coordinates">Pixel Coordinates</h3>
+<p>In Touchdesigner, the normalized x and y coordinates are provided to you in the form of a vector in your shader through a variable directly provided by the execution context.</p>
+<p>This is the variable <a href="https://derivative.ca/UserGuide/Write_a_GLSL_TOP#Pixel_Shaders">vUV</a></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kt">vec2</span><span class="w"> </span><span class="n">coords</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">vUV</span><span class="p">.</span><span class="n">xy</span><span class="p">;</span><span class="w"> </span><span class="c1">// Will store a copy of current XY coord in &#39;coords&#39; vec2 variable</span>
+</code></pre></div>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "navigation.instant"], "search": "../../assets/javascripts/workers/search.e5c33ebb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.51d95adb.min.js"></script>
+      
+    
+  </body>
+</html>
