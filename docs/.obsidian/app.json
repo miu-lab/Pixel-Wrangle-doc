@@ -1,0 +1,11 @@
+{
+  "alwaysUpdateLinks": true,
+  "spellcheck": true,
+  "spellcheckLanguages": [
+    "en-US",
+    "fr"
+  ],
+  "readableLineLength": true,
+  "promptDelete": false,
+  "showLineNumber": true
+}
