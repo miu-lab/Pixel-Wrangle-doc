@@ -23,6 +23,7 @@ Une fois Touchdesigner installé,
 ### **Si vous n'avez pas installé Git**
 
 - Télécharger le dépôt au format ZIP depuis <https://github.com/miu-lab/TD-Pixel-Wrangle> en cliquant sur 'Download ZIP'
+
 ![[install-download.png]]
 
 ## Installer Pixel Wrangle
@@ -65,4 +66,5 @@ Chemin : **C:\\Users\\<*YOUR-USER-ACCOUNT-NAME*>\\Documents\\Derivative\\Palette
 ## Mise à jour de la Palette Touchdesigner
 
 Lorsque vous lancez Touchdesigner à la suite de ces étapes, il peut être nécessaire de faire un refresh de la Palette Touchdesigner.
+
 ![[install-refresh-palette.png]]
