@@ -291,9 +291,77 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#2023-01-initial-release-version" class="md-nav__link">
-    2023-01 -&gt; Initial release version
+  <a href="#2023-01-21-pixel-wrangle-pre-release-rc1" class="md-nav__link">
+    2023-01-21 -&gt; Pixel-Wrangle - Pre-release - RC1
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#features" class="md-nav__link">
+    Features
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#improvements" class="md-nav__link">
+    Improvements
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#known-bugs" class="md-nav__link">
+    Known bugs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quick-install" class="md-nav__link">
+    Quick Install
+  </a>
+  
+    <nav class="md-nav" aria-label="Quick Install">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#requirements" class="md-nav__link">
+    Requirements
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    Installation
+  </a>
+  
+    <nav class="md-nav" aria-label="Installation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#manual" class="md-nav__link">
+    Manual
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#automatic" class="md-nav__link">
+    Automatic
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -738,9 +806,77 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#2023-01-initial-release-version" class="md-nav__link">
-    2023-01 -&gt; Initial release version
+  <a href="#2023-01-21-pixel-wrangle-pre-release-rc1" class="md-nav__link">
+    2023-01-21 -&gt; Pixel-Wrangle - Pre-release - RC1
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#features" class="md-nav__link">
+    Features
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#improvements" class="md-nav__link">
+    Improvements
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#known-bugs" class="md-nav__link">
+    Known bugs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quick-install" class="md-nav__link">
+    Quick Install
+  </a>
+  
+    <nav class="md-nav" aria-label="Quick Install">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#requirements" class="md-nav__link">
+    Requirements
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    Installation
+  </a>
+  
+    <nav class="md-nav" aria-label="Installation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#manual" class="md-nav__link">
+    Manual
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#automatic" class="md-nav__link">
+    Automatic
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -761,30 +897,71 @@
 
 
 <h1 id="changelog">Changelog</h1>
-<h2 id="2023-01-initial-release-version"><strong>2023-01</strong> -&gt; Initial release version</h2>
+<h2 id="2023-01-21-pixel-wrangle-pre-release-rc1"><strong>2023-01-21</strong> -&gt; Pixel-Wrangle - Pre-release - RC1</h2>
+<p><strong>Please note that this is the first release candidate and it may contain unknown bugs. Use it for your projects at your own risk.</strong></p>
+<p><em>Tests were run on a Windows system, an AMD CPU, an RTX 3XXX GPU, and the latest version of TouchDesigner 2022.</em> If you encounter any critical bugs, please let us know in the issues section of the repository.</p>
+<p>The <a href="https://miu-lab.github.io/Pixel-Wrangle-doc/">documentation</a> is currently in a 'work in progress' state and will be updated soon. It will be available in both French and English.</p>
+<h2 id="features">Features</h2>
 <blockquote>
-<p>Since this is a first release, it may not be free of bugs. Using it within your projects is at your own risk.
-[!BUG]</p>
 <ul>
-<li>
-<p>Loading presets still buggy, you have to double click multiple times to load preset properly
-[!Main FEATURES]</p>
-</li>
-<li>
-<p>Compute shaders, 2D array buffers and 3D are all supported</p>
-</li>
-<li>All GLSL TOP parameter types are now supported + all other parameter types with specific syntax, see <a href="../en/Coding%20with%20Pixel%20Wrangle/">Coding with Pixel Wrangle</a> page for syntax examples</li>
-<li>All parameter properties are available for customizing appearance, see <a href="../en/Parameters/">Parameters</a> page for full list</li>
-<li>Export your shader in a new PanelCOMP in one-click (Removing Pixel Wrangle dependency)</li>
-<li>UI has been completely rebuild (you can now customize the main background color, text size, text font, text line height), see <a href="../en/">UI overview</a> page</li>
-<li>Built-in mouse interactions are available everywhere while hovering a viewer and holding [CTRL] key</li>
-<li>A bunch of macros are added for the most common operations, see <a href="../en/Macros/">Macros</a> page</li>
-<li>Add fuzzy search (and path based) to find relevant functions and presets</li>
-<li>External library auto-parser to use arbitrary pure GLSL library, for td specific path resolving and conversion of old GLSL syntaxes, see <a href="../en/Functions/">Functions</a></li>
-<li>Ability to save your own functions / snippets to build your custom GLSL library</li>
-<li>Function loader has preview hints (doc header and signatures)</li>
-<li>Updated keyboard shortcuts, the full list is available in <a href="../en/Keyboard%20Shortcuts/">Keyboard Shortcuts</a></li>
-<li>Non-default parameters are now always saved with preset (including resolution, bit depth, shader mode, etc...)</li>
+<li>Compute shaders, 2D array buffers, and 3D are all supported, with 100% functional parity with GLSLMultiTOP.</li>
+<li>All GLSL TOP parameter types are now supported, with an additional "Header" type parameter to aid in parameter layout in the Controls page.</li>
+<li>All parameter properties are available for customizing appearance.</li>
+<li>Ability to save your own functions/snippets to build your custom GLSL library.</li>
+<li>External library auto-parser to convert any arbitrary GLSL library (in the "Functions/dist" folder of the Pixel-Wrangle root) to a TD-compatible GLSL library (correcting paths and old syntaxes).</li>
+<li>One-click to parse and import all external libraries in your project (with static path resolving).</li>
+<li>One-click to export your shader in a new PanelCOMP (removing the Pixel-Wrangle dependency).</li>
+<li>The UI has been completely rebuilt, allowing you to customize the main background color, text size, text font, and text line height.</li>
+<li>Built-in mouse interactions are available everywhere while hovering a viewer and holding the [CTRL] key.</li>
+<li>A variety of macros have been added for common operations.</li>
+<li>Fuzzy search (and path-based) to find relevant functions and presets.</li>
+</ul>
+</blockquote>
+<h2 id="improvements">Improvements</h2>
+<blockquote>
+<ul>
+<li>All Pixel-Wrangle related data has been moved to a USER folder (Documents/Pixel-Wrangle) including vscode environment, cached code panes, saved presets and functions, and macros.</li>
+<li>The function loader now has preview hints (documentation headers and signatures)</li>
+<li>Keyboard shortcuts have been updated</li>
+<li>All parameters have hover-over help when the ALT key is held down</li>
+<li>Most of the UI elements have help message on hovering</li>
+<li>Non-default parameters are now always saved with presets (including resolution, bit depth, shader mode, etc.)</li>
+<li>Integration with Visual Studio Code has been improved and is now more stable</li>
+<li>The official documentation and Lygia are both integrated as submodules, see the installation instructions for more information.</li>
+<li>Crashes are now extremely rare.</li>
+</ul>
+</blockquote>
+<h2 id="known-bugs">Known bugs</h2>
+<blockquote>
+<ul>
+<li>Loading presets is still buggy, you may need to load them twice.</li>
+<li>Most keybindings are slightly sticky (but still usable).</li>
+<li>Releasing the [CTRL] key after an interaction in the parameter pane viewer will reset the mouse position to the last main viewer position.</li>
+<li>Navigation in the presets and functions browser with arrow keys does not allow you to press and hold to scroll through the list, and the left arrow key collapses all opened directories (so, it is recommended to use your mouse instead).</li>
+<li>Some cacheTOP in subnet may cook unnecessarily after loading a preset. Toggling the time dependency generally solves the problem.</li>
+</ul>
+</blockquote>
+<h2 id="quick-install"><strong>Quick Install</strong></h2>
+<blockquote>
+<h3 id="requirements">Requirements</h3>
+<ul>
+<li><a href="https://derivative.ca/download">TouchDesigner 2022.29530 or later</a></li>
+<li><a href="https://git-scm.com/downloads">Git</a></li>
+</ul>
+<h3 id="installation">Installation</h3>
+<h4 id="manual">Manual</h4>
+<ul>
+<li>Use Git to clone the repository with all its submodules at the root of your Palette folder located in Documents/Derivative</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>git<span class="w"> </span>clone<span class="w"> </span>--recurse-submodules<span class="w"> </span>https://github.com/miu-lab/Pixel-Wrangle.git
+</code></pre></div>
+<ul>
+<li>Update your Palette</li>
+</ul>
+<h4 id="automatic">Automatic</h4>
+<ul>
+<li>Download and execute setup.sh (with Git Bash) provided in the <a href="https://github.com/miu-lab/Pixel-Wrangle/releases">Release section</a></li>
+<li>Update your Palette</li>
 </ul>
 </blockquote>
 
