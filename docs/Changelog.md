@@ -1,25 +1,68 @@
 # Changelog
 
-## **2023-01** -> Initial release version
+## **2023-01-21** -> Pixel-Wrangle - Pre-release - RC1
+
+**Please note that this is the first release candidate and it may contain unknown bugs. Use it for your projects at your own risk.**
+
+*Tests were run on a Windows system, an AMD CPU, an RTX 3XXX GPU, and the latest version of TouchDesigner 2022.* If you encounter any critical bugs, please let us know in the issues section of the repository.
+
+The [documentation](https://miu-lab.github.io/Pixel-Wrangle-doc/) is currently in a 'work in progress' state and will be updated soon. It will be available in both French and English.
+
+## Features
+>
+> - Compute shaders, 2D array buffers, and 3D are all supported, with 100% functional parity with GLSLMultiTOP.
+> - All GLSL TOP parameter types are now supported, with an additional "Header" type parameter to aid in parameter layout in the Controls page.
+> - All parameter properties are available for customizing appearance.
+> - Ability to save your own functions/snippets to build your custom GLSL library.
+> - External library auto-parser to convert any arbitrary GLSL library (in the "Functions/dist" folder of the Pixel-Wrangle root) to a TD-compatible GLSL library (correcting paths and old syntaxes).
+> - One-click to parse and import all external libraries in your project (with static path resolving).
+> - One-click to export your shader in a new PanelCOMP (removing the Pixel-Wrangle dependency).
+> - The UI has been completely rebuilt, allowing you to customize the main background color, text size, text font, and text line height.
+> - Built-in mouse interactions are available everywhere while hovering a viewer and holding the [CTRL] key.
+> - A variety of macros have been added for common operations.
+> - Fuzzy search (and path-based) to find relevant functions and presets.
+
+## Improvements
+>
+> - All Pixel-Wrangle related data has been moved to a USER folder (Documents/Pixel-Wrangle) including vscode environment, cached code panes, saved presets and functions, and macros.
+> - The function loader now has preview hints (documentation headers and signatures)
+> - Keyboard shortcuts have been updated
+> - All parameters have hover-over help when the ALT key is held down
+> - Most of the UI elements have help message on hovering
+> - Non-default parameters are now always saved with presets (including resolution, bit depth, shader mode, etc.)
+> - Integration with Visual Studio Code has been improved and is now more stable
+> - The official documentation and Lygia are both integrated as submodules, see the installation instructions for more information.
+> - Crashes are now extremely rare.
+
+## Known bugs
+>
+> - Loading presets is still buggy, you may need to load them twice.
+> - Most keybindings are slightly sticky (but still usable).
+> - Releasing the [CTRL] key after an interaction in the parameter pane viewer will reset the mouse position to the last main viewer position.
+> - Navigation in the presets and functions browser with arrow keys does not allow you to press and hold to scroll through the list, and the left arrow key collapses all opened directories (so, it is recommended to use your mouse instead).
+> - Some cacheTOP in subnet may cook unnecessarily after loading a preset. Toggling the time dependency generally solves the problem.
+
+## **Quick Install**
 
 >
+> ### Requirements
 >
-> Since this is a first release, it may not be free of bugs. Using it within your projects is at your own risk.
-> [!BUG]
+> - [TouchDesigner 2022.29530 or later](https://derivative.ca/download)
+> - [Git](https://git-scm.com/downloads)
 >
-> - Loading presets still buggy, you have to double click multiple times to load preset properly
-> [!Main FEATURES]
+> ### Installation
 >
-> - Compute shaders, 2D array buffers and 3D are all supported
-> - All GLSL TOP parameter types are now supported + all other parameter types with specific syntax, see [[en/Coding with Pixel Wrangle|Coding with Pixel Wrangle]] page for syntax examples
-> - All parameter properties are available for customizing appearance, see [[en/Parameters|Parameters]] page for full list
-> - Export your shader in a new PanelCOMP in one-click (Removing Pixel Wrangle dependency)
-> - UI has been completely rebuild (you can now customize the main background color, text size, text font, text line height), see [[en/index|UI overview]] page
-> - Built-in mouse interactions are available everywhere while hovering a viewer and holding [CTRL] key
-> - A bunch of macros are added for the most common operations, see [[en/Macros|Macros]] page
-> - Add fuzzy search (and path based) to find relevant functions and presets
-> - External library auto-parser to use arbitrary pure GLSL library, for td specific path resolving and conversion of old GLSL syntaxes, see [[Functions]]
-> - Ability to save your own functions / snippets to build your custom GLSL library
-> - Function loader has preview hints (doc header and signatures)
-> - Updated keyboard shortcuts, the full list is available in [[en/Keyboard Shortcuts|Keyboard Shortcuts]]
-> - Non-default parameters are now always saved with preset (including resolution, bit depth, shader mode, etc...)
+> #### Manual
+>
+> - Use Git to clone the repository with all its submodules at the root of your Palette folder located in Documents/Derivative
+>
+>```bash
+>git clone --recurse-submodules https://github.com/miu-lab/Pixel-Wrangle.git
+>```
+>
+> - Update your Palette
+>
+> #### Automatic
+>
+> - Download and execute setup.sh (with Git Bash) provided in the [Release section](https://github.com/miu-lab/Pixel-Wrangle/releases)
+> - Update your Palette
