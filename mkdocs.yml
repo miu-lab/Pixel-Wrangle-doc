@@ -8,9 +8,9 @@ extra:
     - name: English
       link: /en/ 
       lang: en
-    - name: Français
-      link: /fr/
-      lang: fr
+    # - name: Français
+    #   link: /fr/
+    #   lang: fr
 theme:
   logo: assets/logo.svg
   name: material

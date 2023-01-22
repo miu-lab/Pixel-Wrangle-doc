@@ -24,11 +24,9 @@ For more information on this library and its content, you can also consult the [
 
 ## Important files and folders
 
-Files related to external libraries are stored in the Functions folder at the root of the Pixel Wrangle project.
+Files related to external libraries are stored in your USER Functions folder, you can open it by clicking on the bottom right corner folder in Pixel Wrangle UI.
 
-To add an external library of your choice, you can clone its content into the Functions/src/**\<Library Name>** folder.
-
-![[folder-functions-src.png]]
+To add an external library of your choice, you can clone its content into the Functions/**\<Library Name>** folder.
 
 In the following sections, you will see how to integrate these libraries into your projects.
 
@@ -36,20 +34,17 @@ I also specify that for the library to be readable by Pixel Wrangle, the files m
 
 ## Auto-parsing
 
-Pixel Wrangle provides a summary parsing tool that makes pure GLSL libraries, GLSL libraries compatible with the Touchdesigner ecosystem.
+Pixel Wrangle provides a summary parsing tool that convert pure GLSL libraries compatible GLSL libraries with the Touchdesigner ecosystem.
 
 This mainly concerns the form of the import paths that are specific to Touchdesigner, but also the conversion of certain function names such as texture2D(), and others so that the library runs correctly in the Touchdesigner environment.
 
 The principle is as follows:
 
-You drop your raw library folders in the Functions/src folder as described above
-You parse your libraries directly from the Pixel Wrangle interface (Just press 'Build Libraries' from the 'Code/Plugin' page)
+- You drop your raw library folders in your USER Functions folder as described above
+You parse your libraries directly from the Pixel Wrangle interface (Just press 'Import Libraries' from the 'Code/Plugin' page)
 Once the libraries are parsed, an automatically Touchdesigner-compatible copy of the file / folder architecture is made in the 'Functions/dist' folder.
 
-## Importing Libraries in the Project
-
-To import libraries into your project, simply press 'Import Libraries' from the 'Code/Plugin' page.
-This will create the entire file/folder architecture at the root of your TouchDesigner project, in a BaseCOMP called 'libs'.
+Then, the entire file/folder architecture at the root of your TouchDesigner project, in a BaseCOMP called 'libs'.
 
 Each '.glsl' import is actually a TextDAT in Sync File mode, which points to the corresponding file in the Functions/dist folder (the copy of the file after parsing).
 

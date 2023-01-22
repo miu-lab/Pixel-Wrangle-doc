@@ -11,31 +11,11 @@
             "id": "aba62a2288576fad",
             "type": "leaf",
             "state": {
-              "type": "canvas",
+              "type": "markdown",
               "state": {
-                "file": "FR - Vue d'ensemble.canvas",
-                "viewState": {
-                  "x": -231.2152073237785,
-                  "y": -701.0000402771908,
-                  "zoom": -1.0809363584817966,
-                  "snapToGrid": false
-                }
-              }
-            }
-          },
-          {
-            "id": "746a96e5c7f977ed",
-            "type": "leaf",
-            "state": {
-              "type": "canvas",
-              "state": {
-                "file": "FR - Vue d'ensemble.canvas",
-                "viewState": {
-                  "x": 60,
-                  "y": 40,
-                  "zoom": -2.747603025148463,
-                  "snapToGrid": false
-                }
+                "file": "en/Keyboard Shortcuts.md",
+                "mode": "preview",
+                "source": false
               }
             }
           }
@@ -106,7 +86,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "FR - Vue d'ensemble.canvas",
+                "file": "en/Keyboard Shortcuts.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -123,7 +103,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "FR - Vue d'ensemble.canvas",
+                "file": "en/Keyboard Shortcuts.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -146,7 +126,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "FR - Vue d'ensemble.canvas"
+                "file": "en/Keyboard Shortcuts.md"
               }
             }
           }
@@ -170,15 +150,15 @@
   },
   "active": "aba62a2288576fad",
   "lastOpenFiles": [
-    "EN - Overview.canvas",
-    "FR - Vue d'ensemble.canvas",
-    "FR/Démarrer rapidement avec Pixel Wrangle.md",
-    "FR/Contribuer.md",
-    "FR/Coder avec Pixel Wrangle.md",
-    "FR/Fonctions.md",
-    "FR/Macros.md",
-    "FR/GLSL.md",
-    "FR/Visual Studio Code.md",
-    "FR/UI.md"
+    "en/Install.md",
+    "en/index.md",
+    "en/GLSL Language.md",
+    "en/Functions.md",
+    "en/Contribute.md",
+    "en/Coding with Pixel Wrangle.md",
+    "en/Parameters.md",
+    "en/Macros.md",
+    "en/Keyboard Shortcuts.md",
+    "FR - Vue d'ensemble.canvas"
   ]
 }

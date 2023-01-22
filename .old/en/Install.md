@@ -28,27 +28,10 @@ Once Touchdesigner is installed,
 
 - Move the downloaded zip file to **C:\Users\<YOUR-USER-ACCOUNT-NAME>\Documents\Derivative\Palette** and extract its contents to this folder as shown below
 
-- **Attention, it is important that the root folder of the project has the exact name: TD-Pixel-Wrangle**
+- **Attention, it is important that the root folder of the project has the exact name: Pixel-Wrangle**
 
 ![[img/install-path.png]]
 
-### **OR If you have installed Git**
-
-Launch a terminal in the folder **C:\Users\<YOUR-USER-ACCOUNT-NAME>\Documents\Derivative\Palette** or navigate there with cd and then do a 'git clone' of the project
-
-```bash
-git clone https://github.com/miu-lab/TD-Pixel-Wrangle.git
-```
-
-## Configuration
-
-If you wish to work with Visual Studio Code, you can immediately specify the path to the executable in the 'settings.json' file at the root of the project.
-
-```json
-{"vscodePath": "C:\\Users\\<YOUR-USER-ACCOUNT-NAME>\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe"}
-```
-
-Pour plus de détails sur l'utilisation conjointe de Pixel Wrangle avec Visual Studio Code, rendez-vous sur la page [[Visual Studio Code]]
 
 ## Documentation
 
@@ -57,7 +40,7 @@ Si vous souhaitez accéder à la documentation en local et dans les meilleures c
 You can then open a "vault" (vault: Obsidian terminology for designating a file and folder architecture in markdown).
 
 The documentation vault is stored in the 'doc' folder at the root of the project, you can open it directly in Obsidian
-Path: **C:\\Users\\<*YOUR-USER-ACCOUNT-NAME*>\\Documents\\Derivative\\Palette\\TD-Pixel-Wrangle\\doc**
+Path: **C:\\Users\\<*YOUR-USER-ACCOUNT-NAME*>\\Documents\\Derivative\\Palette\\Pixel-Wrangle\\doc**
 
 ## Updating the Touchdesigner Palette
 

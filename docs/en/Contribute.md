@@ -8,4 +8,4 @@ Any RFE is obviously welcome via the dedicated section on the GitHub repo. Howev
 
 On the other hand, if anyone is interested in helping me make this project a reality, I would be delighted to exchange and collaborate on this topic. Despite the fact that TD .tox are binaries, it is still possible to load scripts from the outside, so finally quite a few things are externalizable (including the most awkward Python scripts to date).
 
-Available to exchange, preferably via [GitHub](https://github.com/miu-lab/TD-Pixel-Wrangle), or by email at the following address: studio.miu.lab@gmail.com
+Available to exchange, preferably via [GitHub](https://github.com/miu-lab/Pixel-Wrangle), or by email at the following address: studio.miu.lab@gmail.com

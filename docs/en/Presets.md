@@ -4,7 +4,7 @@
 
 ## Generalities
 
-Pixel Wrangle has a system for managing presets. These presets are called 'presets'
+Pixel Wrangle has a system for managing presets.
 
 A Pixel-Wrangle preset contains both all the code you have written in each of the shader panels, as well as all the parameters and their state at the time of saving.
 
@@ -20,22 +20,24 @@ You can then type in the name of your search to filter the results or scroll thr
 
 Presets are stored by default in the Presets folder at the root of Pixel Wrangle in your Palette.  
 
-There are 2 main folders:
+There are 2 main roots:
 
-- Builtins: This is the folder for presets shipped with Pixel Wrangle
-- User: This is the folder where your presets are saved by default
+- Factory library (\<Pixel Wrangle plugin root>/Presets) : This is the folder of presets that are shipped with Pixel Wrangle (Read-only)
+- User library (USER/Presets): This is the folder where your presets are saved, open this folder with the folder icon at the bottom left corner of Pixel Wrangle UI or CTRL + O
 
-NB: If you want to build your own folder structure in your User folder, you can do so from your system's file explorer by clicking on the folder icon at the bottom left of the interface or using the shortcut [CTRL] + O.
-
-All the created subfolders are reflected in the Pixel Wrangle explorer.
+All the created subfolders are reflected in the Pixel Wrangle preset browser.
 
 ## Load a preset
 
-To load a preset, simply double-click it from the Pixel Wrangle explorer.
+To load a preset, simply double-click or press enter
 
 **Warning, sometimes loading can be erratic, you may have to double-click several times.
 This is a known bug that should be fixed in upcoming versions of Pixel Wrangle**
 
 ## Save a preset
 
-To save the state of your shader in a new preset, you can click on '+' in the UI. This will open a pop-up that will ask you under what name you want to save this preset. By default, this preset will be saved in the Presets/User folder from the root of Pixel Wrangle in your Palette.
+To save the state of your shader in a new preset, you can click on '+' in the UI. This will open a pop-up that will ask you under what name you want to save this preset. By default, this preset will be saved in the USER/Presets folder.
+
+You can also use path based naming schemes :
+
+- gen/noise/mycrazynoise will save a preset called 'mycrazynoise.json' and create all the intermediates folder from the path selected in the left side. If nothing is selected, it will start from the USER/Presets (root)
